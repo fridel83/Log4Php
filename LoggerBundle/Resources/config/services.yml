@@ -1,0 +1,4 @@
+services:
+    app_logger.blog_controller:
+        class: app\LoggerBundle\Controller\LoggerController
+        arguments: [@kernel]
