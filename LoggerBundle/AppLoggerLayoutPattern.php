@@ -21,7 +21,7 @@ final class AppLoggerLayoutPattern extends LoggerLayoutPattern {
 		$this->converterMap['appUrl'] = __NAMESPACE__.'\AppLoggerPatternConverterAppUrl';
 		$this->converterMap['appST'] = __NAMESPACE__.'\AppLoggerPatternConverterAppST';
 		$this->converterMap['appCorrelId'] = __NAMESPACE__.'\AppLoggerPatternConverterAppCorrelId';
-		$this->converterMap['appOpeId'] = __NAMESPACE__.'\AppLoggerPatternConverterAppOpeId';
+		$this->converterMap['appOpeId'] = __NAMESPACE__.'\AppLoggerPatternConverterAppUserId';
 	}
 }
 

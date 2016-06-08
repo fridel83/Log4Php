@@ -10,7 +10,7 @@ namespace app\LoggerBundle;
 use LoggerLoggingEvent;
 use LoggerPatternConverter;
 
-final class AppLoggerPatternConverterAppOpeId extends LoggerPatternConverter {
+final class AppLoggerPatternConverterAppUserId extends LoggerPatternConverter {
 	public function convert(LoggerLoggingEvent $event) {
 		return $event->getAppOpeId();
 	}
