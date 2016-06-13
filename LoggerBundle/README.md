@@ -38,7 +38,7 @@ Register bundle in AppKernel.php
 
 $bundles = array(
     // ...
-    new app\LoggerBundle\appLoggerBundle(),
+    new FS\Log4PhpBundle\FSLog4PhpBundle(),
     // ...
 );
 Add Bundle to autoload
@@ -47,7 +47,7 @@ Add Bundle to autoload
 
 $loader->registerNamespaces(array(
     // ...
-    'LOGGER' => __DIR__.'/../vendor/bundles',
+    'FS' => __DIR__.'/../vendor/bundles',
     // ...
 ));
 
@@ -57,26 +57,41 @@ Use Log4Php without Symfony2 see Log4php Quickstart
 
 app/config.yml
 
-parameters:
-    locale:fr 
-    logger_dir_path: app
+fs_log4_php:
+  viewer:
+    view_all_logs: false
+    log_files: [ %kernel.root_dir%/logs/info.log, %kernel.root_dir%/logs/debug.log ]
+  appenders:
+    default:
+      class: LoggerAppenderFile
+      layout:
+        class: LoggerLayoutPattern
+      params:
+        file: %kernel.root_dir%/logs/default.log
+  rootLogger:
+    level: DEBUG
+    appenders: [ default ]
+Sample config for a simple file-logger. Config for other logger-types see the wiki.
 
-app_logger:
-    loggers:
-        app:
-            root_path: "%kernel.logs_dir%/%logger_dir_path%/"
-            appenders:
-                dateRollingAppender :
-                    enabled: "true"
-                    file : logger_app_%s.log
-                    datePattern : Y-m-d
-                debugDateRollingAppender :
-                    enabled: "true"
-                    file : debug_logger_app_%s.log
-                    datePattern : Y-m-d
+Symfony-Profiler
+The Bundle has it's own part in the profiler. This section is named "All Logs".
 
-create the app repository inside app/log/ dir in the main project directory
+In the YAML-configuration you can configure which log-files should be read. There are two options:
 
+- view_all_logs: [true|false] the datacollector reads all log-file in the default log-directory.
+- log_files: array if view_all_logs is true, this array will be overwritten, otherwise this array contains
+the log-file which should be read.
+Costum Appenders
+You can register your own services as an appender.
 
+    <service id="myapp" class="Acme\DemoBundle\MyService">
+        <tag name="logger.appender" id="costum.appender" />
+    </service>
+The service you want to register, needs the tag logger.appender and the option id. The option id represent the name of your appender. If you want to register the appender for a concrete logger (excepting root-logger), you can add the option logger.
+
+    <service id="myapp" class="Acme\DemoBundle\MyService">
+        <tag name="logger.appender" id="costum.appender" logger="my.logger" />
+    </service>
+Your Service has to extends the \LoggerAppender class from Log4Php.
 
 If the logger is not found, the root logger will be used. How to setup your own logger, take a look at the cookbook or the documentation of Log4Php.

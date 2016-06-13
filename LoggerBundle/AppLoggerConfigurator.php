@@ -169,7 +169,7 @@ class AppLoggerConfigurator extends ContainerAware implements LoggerConfigurator
     public function configure(LoggerHierarchy $hierarchy, $input = null)
     {
         $layout = new AppLoggerLayoutPattern();
-        $layout->setConversionPattern("%date{Y-m-d H:i:s,u} | %hostname | %appProcess | %level | %appMethod | %appStatus | %appCode | %appResponseTime | %appUrl | %appST | %appCorrelId | %appOpeId | %msg%newline");
+        $layout->setConversionPattern("%date{Y-m-d H:i:s,u} | %hostname | %appProcess | %level | %appMethod | %appStatus | %appCode | %appResponseTime | %appUrl | %appST | %appCorrelId | %appUserId | %msg%newline");
 
         $layout->activateOptions();
         

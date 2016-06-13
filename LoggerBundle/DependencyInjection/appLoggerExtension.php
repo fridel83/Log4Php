@@ -52,10 +52,12 @@ class appLoggerExtension extends Extension
 
     }
 
+    /*
     static function getLoggerConf(ContainerBuilder $container)
     {
         $file=$container->getParameter('kernel.root_dir');
         $value = Yaml::parse(file_get_contents($file.'/config/config.yml'));
         var_dump($value);
     }
+    */
 }

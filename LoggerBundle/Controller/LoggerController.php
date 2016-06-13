@@ -163,8 +163,22 @@ class LoggerController extends Controller
         $event->setAppProperties($data);
         $this->logger->logEvent($event);
     }
-    
 
+    /**
+     * @return mixed
+     */
+    public function getMycontainer()
+    {
+        return $this->mycontainer;
+    }
+
+    /**
+     * @param mixed $mycontainer
+     */
+    public function setMycontainer($mycontainer)
+    {
+        $this->mycontainer = $mycontainer;
+    }
 
 
 }
