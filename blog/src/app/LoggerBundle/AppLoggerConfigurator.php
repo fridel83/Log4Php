@@ -18,7 +18,7 @@ use Log4php\LoggerAppenderEcho;
 use Log4php\LoggerAppenderFile;
 use Log4php\LoggerAppenderMail;
 use Log4php\LoggerAppenderSyslog;
-use Log4php\LoggerConfigurator;
+use LoggerConfigurator;
 use Log4php\LoggerFilterLevelRange;
 use Log4php\LoggerHierarchy;
 use Log4php\LoggerLayoutPattern;

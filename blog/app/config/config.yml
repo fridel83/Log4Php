@@ -7,6 +7,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    logger_dir_path: app
 
 framework:
     #esi:             ~
@@ -77,3 +78,17 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+app_logger:
+    loggers:
+        app:
+            root_path: "%kernel.logs_dir%/%logger_dir_path%/"
+            appenders:
+                dateRollingAppender :
+                    enabled: "true"
+                    file : logger_app_%s.log
+                    datePattern : Y-m-d
+                debugDateRollingAppender :
+                    enabled: "true"
+                    file : debug_logger_app_%s.log
+                    datePattern : Y-m-d

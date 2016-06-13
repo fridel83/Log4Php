@@ -4,7 +4,7 @@ namespace app\LoggerBundle\Controller;
 
 use app\LoggerBundle\AppLoggerConfigurator;
 use app\LoggerBundle\AppLoggerLoggingEvent;
-use Logger;
+use Log4php\Logger  ;
 use LoggerLevel;
 use LoggerLoggingEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
