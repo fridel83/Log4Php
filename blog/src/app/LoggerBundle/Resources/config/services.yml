@@ -1,0 +1,13 @@
+services:
+    app_logger.logger_controller:
+        class: app\LoggerBundle\Controller\LoggerController
+        arguments: [@kernel]
+
+    app_logger.logger_params:
+        class: app\LoggerBundle\Event\ParamLogger
+        arguments: [@app_logger.logger_controller]
+
+    app_logger.logger_listener:
+            class: app\LoggerBundle\EventListener\LoggerListener
+            tags:
+                - { name: kernel.event_listener, event: app_logger.logger, method: onLoggerEvent }
