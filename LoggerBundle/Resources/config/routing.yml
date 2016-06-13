@@ -1,3 +1,0 @@
-app_logger_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: appLoggerBundle:Default:index }
