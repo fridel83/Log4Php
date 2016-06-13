@@ -8,7 +8,7 @@
 namespace app\LoggerBundle;
 
 
-use LoggerLoggingEvent;
+use Log4php\LoggerLoggingEvent;
 
 class AppLoggerLoggingEvent extends LoggerLoggingEvent
 {

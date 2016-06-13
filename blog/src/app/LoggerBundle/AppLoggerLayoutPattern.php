@@ -7,7 +7,7 @@
 namespace app\LoggerBundle;
 
 
-use LoggerLayoutPattern;
+use Log4php\LoggerLayoutPattern;
 
 final class AppLoggerLayoutPattern extends LoggerLayoutPattern {
 	public function __construct() {

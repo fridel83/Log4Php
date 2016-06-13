@@ -7,8 +7,8 @@ namespace app\LoggerBundle;
  *
  */
 
-use LoggerLoggingEvent;
-use LoggerPatternConverter;
+use Log4php\LoggerLoggingEvent;
+use Log4php\LoggerPatternConverter;
 
 final class AppLoggerPatternConverterAppUrl extends LoggerPatternConverter {
 	public function convert(LoggerLoggingEvent $event) {

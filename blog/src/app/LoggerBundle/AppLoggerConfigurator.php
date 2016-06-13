@@ -11,19 +11,19 @@ namespace app\LoggerBundle;
 use app\LoggerBundle\AppLogException;
 use app\LoggerBundle\AppLoggerPatternConverterHostname;
 
-use Logger;
-use LoggerAppender;
-use LoggerAppenderDailyFile;
-use LoggerAppenderEcho;
-use LoggerAppenderFile;
-use LoggerAppenderMail;
-use LoggerAppenderSyslog;
-use LoggerConfigurator;
-use LoggerFilterLevelRange;
-use LoggerHierarchy;
-use LoggerLayoutPattern;
-use LoggerLevel;
-use LoggerLoggingEvent;
+use Log4php\Logger;
+use Log4php\LoggerAppender;
+use Log4php\LoggerAppenderDailyFile;
+use Log4php\LoggerAppenderEcho;
+use Log4php\LoggerAppenderFile;
+use Log4php\LoggerAppenderMail;
+use Log4php\LoggerAppenderSyslog;
+use Log4php\LoggerConfigurator;
+use Log4php\LoggerFilterLevelRange;
+use Log4php\LoggerHierarchy;
+use Log4php\LoggerLayoutPattern;
+use Log4php\LoggerLevel;
+use Log4php\LoggerLoggingEvent;
 use Symfony\Component\DependencyInjection\ContainerAware;
 
 
